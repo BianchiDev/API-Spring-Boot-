@@ -53,7 +53,7 @@ public class ProdutoService {
         produtoRepository.deletar(id);
     }
 
-    public Produto atualizar(Produto produto){
+    public Produto atualizar(Integer id, Produto produto){
         
         //Poderia ter  uma validação aqui.
         deletar(produto.getId());

@@ -43,7 +43,7 @@ A instalação será via terminal bach, pois estou usando linux ubuntu, caso est
 execute o seguinte comando <br>(substitua "seunomedeusuario" e "suasenha" pelos valores desejados):
 >CREATE USER seunomedeusuario WITH PASSWORD 'suasenha';
 
--Em seguida, crie um novo banco de dados. Substitua "nomedobanco" pelo nome que você deseja dar ao banco de dados:<br>
+- Em seguida, crie um novo banco de dados. Substitua "nomedobanco" pelo nome que você deseja dar ao banco de dados:<br>
 >GRANT ALL PRIVILEGES ON DATABASE nomedobanco TO seunomedeusuario;
 - Para sair do console do PostgreSQL, digite:
 >\q

@@ -3,6 +3,7 @@
 ## ☕ Desenvolvendo Get, Post, Put e Delete
 
 - Uso de anotation
- Uso dos métodos gattes e settes 
+ Uso dos métodos gattes e settes. 
  - Criando a entidade Produto e seus atriibutos.
-- testando usando postman
+- Testando usando postman.
+- Tratamento de erros.

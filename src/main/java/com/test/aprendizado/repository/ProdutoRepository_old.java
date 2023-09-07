@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.test.aprendizado.model.Produto;
 
 @Repository
-public class ProdutoRepository {
+public class ProdutoRepository_old {
     
     private List<Produto> produtos = new ArrayList<Produto>();
     private Integer ultimoId = 0;

@@ -4,5 +4,6 @@
 Usarei as ferramentas Vscode, DBeaver na criação e gerenciamento do projeto.
 
 
-<a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started"><img height ="35" src ="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"></a>
-<a href="https://www.postgresql.org/"><img height= "35" src= "https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"></a><hr>
+<hr><a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started"><img height ="35" src ="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"></a>
+<a href="https://dbeaver.io/"><img height ="35"  src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white"></a>
+<a href="https://www.postgresql.org/"><img height= "35" src= "https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"></a>

@@ -28,26 +28,40 @@ A instalação será via terminal bach, pois estou usando linux ubuntu, caso est
 sudo apt update
 ```
 - Instale o PostgreSQL:
-> sudo apt install postgresql postgresql-contrib
+```
+sudo apt install postgresql postgresql-contrib
+```
 - O PostgreSQL será instalado em seu sistema. O serviço será iniciado automaticamente após a instalação.
 
 ## 🚀 Configurar o PostgreSQL
 - O PostgreSQL cria automaticamente um usuário chamado "postgres". Você pode mudar para esse usuário digitando:
->sudo -i -u postgres
+```
+sudo -i -u postgres
+```
 - Acesse o console do PostgreSQL digitando:
->psql
+```
+psql
+```
 - Agora você está no console do PostgreSQL e pode executar comandos SQL. Para sair do console, digite:
->\q
+```
+\q
+```
 
 ## 🚀 Criar um Banco de Dados e um Usuário
 
 - Para criar um usuário faça o seguinte:<br><br>
 execute o seguinte comando <br>(substitua "seunomedeusuario" e "suasenha" pelos valores desejados):
->CREATE USER seunomedeusuario WITH PASSWORD 'suasenha';
+```
+CREATE USER seunomedeusuario WITH PASSWORD 'suasenha';
+```
 
 - Em seguida, crie um novo banco de dados. Substitua "nomedobanco" pelo nome que você deseja dar ao banco de dados:<br>
->GRANT ALL PRIVILEGES ON DATABASE nomedobanco TO seunomedeusuario;
+```
+GRANT ALL PRIVILEGES ON DATABASE nomedobanco TO seunomedeusuario;
+```
 - Para sair do console do PostgreSQL, digite:
->\q
+```
+\q
+```
 
 

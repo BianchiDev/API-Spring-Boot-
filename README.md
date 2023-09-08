@@ -24,7 +24,9 @@ A instalação será via terminal bach, pois estou usando linux ubuntu, caso est
 - Abra o terminal.
 
 - Atualize o índice de pacotes do sistema: 
->sudo apt update
+```
+sudo apt update
+```
 - Instale o PostgreSQL:
 > sudo apt install postgresql postgresql-contrib
 - O PostgreSQL será instalado em seu sistema. O serviço será iniciado automaticamente após a instalação.

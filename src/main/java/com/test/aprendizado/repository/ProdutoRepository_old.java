@@ -1,13 +1,13 @@
 package com.test.aprendizado.repository;
 
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
 
 import com.test.aprendizado.model.Produto;
+import com.test.aprendizado.model.exception.ResourceNotFoundExcpition;
 
 @Repository
 public class ProdutoRepository_old {
@@ -71,7 +71,8 @@ public class ProdutoRepository_old {
 
         // Caso não encontre será disparado a menssagem de erro
         if(produtoEncontrado.isEmpty()){
-            throw new  InputMismatchException("Produto não encontrado");
+           // throw new  InputMismatchException("Produto não encontrado");
+           throw new ResourceNotFoundExcpition("Produto não encontrado");
         }
         // Primeiro remove o produda lista para em seguida adicionar o produto atualizado referenciando o mesmo ID
         deletar(produto.getId());

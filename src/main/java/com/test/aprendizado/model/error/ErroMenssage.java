@@ -4,19 +4,16 @@ public class ErroMenssage {
 
     private String titulo;
 
-    private String status;
+    private Integer status;
 
     private String menssage;
 
     
 
-    public ErroMenssage(String titulo, String status, String menssage) {
+    public ErroMenssage(String titulo, Integer status, String menssage) {
         this.titulo = titulo;
         this.status = status;
         this.menssage = menssage;
-    }
-
-    public ErroMenssage(String titulo2, int value, String message) {
     }
 
     public String getTitulo() {
@@ -27,11 +24,11 @@ public class ErroMenssage {
         this.titulo = titulo;
     }
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
@@ -42,5 +39,5 @@ public class ErroMenssage {
     public void setMenssage(String menssage) {
         this.menssage = menssage;
     }
-    
+
 }

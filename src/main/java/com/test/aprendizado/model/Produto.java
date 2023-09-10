@@ -22,6 +22,8 @@ public class Produto {
     private String observacao;
     //#endregion
 
+
+    
     //#region getter and setter
     public Integer getId() {
         return id;

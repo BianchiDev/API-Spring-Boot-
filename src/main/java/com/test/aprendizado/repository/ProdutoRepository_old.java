@@ -1,6 +1,6 @@
 package com.test.aprendizado.repository;
 
-import java.util.ArrayList;
+import java.util.ArrayList;   
 import java.util.List;
 import java.util.Optional;
 
@@ -70,14 +70,14 @@ public class ProdutoRepository_old {
         Optional<Produto> produtoEncontrado = obterPorId(produto.getId());
 
         // Caso não encontre será disparado a menssagem de erro
-        if(produtoEncontrado.isEmpty()){
+        if(produtoEncontrado.isEmpty()){ // isEmpty --> condição " se for Vazio"
            // throw new  InputMismatchException("Produto não encontrado");
-           throw new ResourceNotFoundExcpition("Produto não encontrado");
+           throw new ResourceNotFoundExcpition("Produto não encontrado!");
         }
         // Primeiro remove o produda lista para em seguida adicionar o produto atualizado referenciando o mesmo ID
         deletar(produto.getId());
         // Atualizando o produto como o novo produto referenciando o mesmo Id.
-        produtos.add(produto);
+         produtos.add(produto);
 
         return produto;
        }

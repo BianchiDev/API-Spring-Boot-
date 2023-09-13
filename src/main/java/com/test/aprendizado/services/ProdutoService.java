@@ -61,7 +61,7 @@ public class ProdutoService {
      */
     public ProdutoDTO adicionar(ProdutoDTO produtoDto){
         //Poederia ter alguma regra de negócio para validar o produto... 
-        produtoDto.setId(null);
+        produtoDto.setId(produtoDto.getId());
 
     //Criar um object de mapeamento.
         ModelMapper mapper = new ModelMapper();

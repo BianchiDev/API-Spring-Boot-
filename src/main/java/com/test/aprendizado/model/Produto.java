@@ -29,6 +29,9 @@ public class Produto {
         return id;
     }
 
+    public Produto() {
+    }
+
     public Produto(Integer id, String nome, Integer quantidade, Double valor, String observacao) {
         this.id = id;
         this.nome = nome;

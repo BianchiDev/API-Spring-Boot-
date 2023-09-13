@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.stereotype.Repository;
+
 
 import com.test.aprendizado.model.Produto;
 import com.test.aprendizado.model.exception.ResourceNotFoundExcpition;
 
-@Repository
+
+
 public class ProdutoRepository_old {
     
     private List<Produto> produtos = new ArrayList<Produto>();

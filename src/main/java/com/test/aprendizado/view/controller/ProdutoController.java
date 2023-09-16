@@ -26,7 +26,7 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
 @RestController
 @RequestMapping("/api/produtos")
-@SecurityRequirement(name = "auth")
+/* @SecurityRequirement(name = "auth") */
 public class ProdutoController {
 
     @Autowired

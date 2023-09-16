@@ -38,18 +38,18 @@ import io.swagger.v3.oas.annotations.servers.Server;
             description = "DevOps",
             url = "http://http://localhost:3001/"
         )
-     },
-     security = @SecurityRequirement(
+     }
+ /*     security = @SecurityRequirement(
         name = "auth"
-     )
+     ) */
 )
-@SecurityScheme(
+/* @SecurityScheme(
     name = "auth",
     in = SecuritySchemeIn.HEADER,
     type = SecuritySchemeType.HTTP,
     bearerFormat = "JWT",
     description = "Security desc"
-)
+) */
 
 public class OpenApiConfig {
     

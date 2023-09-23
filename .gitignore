@@ -31,3 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### aplication.propertes ###
+/main/resources/aplication.propertes
+
+#### NÃO ATERA O README #####
+/README.md

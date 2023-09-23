@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Projeto Back End
 
 > Este é um projeto que tem a finalidade de servir como  base para criação de APIs com Spring boot e o banco de dados PostegreSQL além é claro de um deploy.<br>
@@ -64,4 +65,12 @@ GRANT ALL PRIVILEGES ON DATABASE nomedobanco TO seunomedeusuario;
 \q
 ```
 
+=======
+# Desenvolvendo o DTO
+
+>Desenvolvemos melhorias no Controller, no service e criamos uma pasta compartilhada com uma Entity para esconder atributos ou métodos, o que for necessário de acordo com a especificação da documentação.
+- Criado ProdutoResponse
+- Criado ProdutoRequest
+- Movido a pasta controller para a pasta chared
+>>>>>>> fa34d08226af17c37b346246085d3eb2444a9083
 

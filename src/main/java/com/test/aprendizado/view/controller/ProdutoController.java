@@ -1,0 +1,120 @@
+package com.test.aprendizado.view.controller;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.test.aprendizado.services.ProdutoService;
+import com.test.aprendizado.shared.ProdutoDTO;
+import com.test.aprendizado.view.model.ProdutoRequest;
+import com.test.aprendizado.view.model.ProdutoResponse;
+
+import io.swagger.v3.oas.annotations.Hidden;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+
+
+
+@RestController
+@RequestMapping("/api/produtos")
+ @SecurityRequirement(name = "auth") 
+public class ProdutoController {
+
+    @Autowired
+    ProdutoService produtoService;
+    
+    
+    @Operation(
+        tags = "Produto",
+        description = "Get all Produto",
+        responses = {
+                @ApiResponse(
+                    description  = "Sucesse",
+                    responseCode = "200"
+                    ),
+                @ApiResponse(
+                description  = "Data Not Found",
+                responseCode = "404"
+                ),
+            }
+    )
+
+    @GetMapping
+    public ResponseEntity<List<ProdutoResponse>>obterTodos(){
+        List<ProdutoDTO> produto =  produtoService.obterTodos();
+        
+        ModelMapper mapper = new ModelMapper();
+
+        List<ProdutoResponse> resposta = produto.stream()
+        .map(ProdutoDto -> mapper.map(ProdutoDto, ProdutoResponse.class))
+        .collect(Collectors.toList());
+       return   new ResponseEntity<>(resposta, HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Optional<ProdutoResponse>> obterPorId(@PathVariable Integer id){
+
+        /* try{
+             */
+              Optional<ProdutoDTO> dto = produtoService.obterPorId(id);
+      
+              ProdutoResponse produto = new ModelMapper().map(dto.get(), ProdutoResponse.class);
+      
+              return new ResponseEntity<>(Optional.of(produto), HttpStatus.OK);
+
+/*         } catch(Exception e){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
+        } */
+    }
+
+    @PostMapping
+    public ResponseEntity<ProdutoResponse> adicionar(@RequestBody ProdutoRequest produtoReq){// A anotation RequestBody faz com que o Post conversta no body.
+        
+        ModelMapper mapper = new ModelMapper();
+
+        ProdutoDTO produtoDto = mapper.map(produtoReq, ProdutoDTO.class);
+        
+        produtoDto = produtoService.adicionar(produtoDto);
+
+       return  new ResponseEntity<>(mapper.map(produtoDto, ProdutoResponse.class),HttpStatus.CREATED);
+    }
+    @Hidden // Anotation que oculta a requisição no swagger
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deletar(@PathVariable Integer id){
+        produtoService.deletar(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+
+    @Hidden // Anotation que oculta a requisição no swagger
+    @PutMapping("/{id}")
+    public ResponseEntity<ProdutoResponse> atualizar(@RequestBody ProdutoRequest produtoReq, @PathVariable Integer id){
+      
+        ModelMapper mapper = new ModelMapper();
+       ProdutoDTO produtoDto = mapper.map(produtoReq, ProdutoDTO.class);
+
+        produtoDto = produtoService.atualizar(id, produtoDto);
+
+        return new ResponseEntity<>(
+            mapper.map(produtoDto, ProdutoResponse.class),
+            HttpStatus.OK
+        );
+
+    }
+
+}

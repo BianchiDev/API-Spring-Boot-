@@ -22,16 +22,36 @@ import com.test.aprendizado.shared.ProdutoDTO;
 import com.test.aprendizado.view.model.ProdutoRequest;
 import com.test.aprendizado.view.model.ProdutoResponse;
 
+import io.swagger.v3.oas.annotations.Hidden;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+
 
 
 @RestController
 @RequestMapping("/api/produtos")
-/* @SecurityRequirement(name = "auth") */
+ @SecurityRequirement(name = "auth") 
 public class ProdutoController {
 
     @Autowired
     ProdutoService produtoService;
     
+    
+    @Operation(
+        tags = "Produto",
+        description = "Get all Produto",
+        responses = {
+                @ApiResponse(
+                    description  = "Sucesse",
+                    responseCode = "200"
+                    ),
+                @ApiResponse(
+                description  = "Data Not Found",
+                responseCode = "404"
+                ),
+            }
+    )
 
     @GetMapping
     public ResponseEntity<List<ProdutoResponse>>obterTodos(){
@@ -73,7 +93,7 @@ public class ProdutoController {
 
        return  new ResponseEntity<>(mapper.map(produtoDto, ProdutoResponse.class),HttpStatus.CREATED);
     }
-
+    @Hidden // Anotation que oculta a requisição no swagger
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deletar(@PathVariable Integer id){
         produtoService.deletar(id);
@@ -81,7 +101,7 @@ public class ProdutoController {
     }
 
 
-
+    @Hidden // Anotation que oculta a requisição no swagger
     @PutMapping("/{id}")
     public ResponseEntity<ProdutoResponse> atualizar(@RequestBody ProdutoRequest produtoReq, @PathVariable Integer id){
       

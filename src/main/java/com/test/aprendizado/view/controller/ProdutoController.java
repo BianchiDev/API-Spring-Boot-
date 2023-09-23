@@ -22,7 +22,7 @@ import com.test.aprendizado.shared.ProdutoDTO;
 import com.test.aprendizado.view.model.ProdutoRequest;
 import com.test.aprendizado.view.model.ProdutoResponse;
 
-import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+
 
 @RestController
 @RequestMapping("/api/produtos")

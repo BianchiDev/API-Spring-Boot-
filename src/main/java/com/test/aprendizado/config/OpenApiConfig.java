@@ -28,29 +28,34 @@ import io.swagger.v3.oas.annotations.servers.Server;
      servers = {
         @Server(
             description = "Dev",
-            url = "http://http://localhost:3000/"
+            url = "http://localhost:3000"
         ),
         @Server(
             description = "test",
-            url = "http://http://localhost:8080/"
+            url = "http://localhost:8080"
         ),
         @Server(
             description = "DevOps",
-            url = "http://http://localhost:3001/"
+            url = "http://localhost:3001"
         )
-     }
- /*     security = @SecurityRequirement(
+     },
+     security = @SecurityRequirement(
         name = "auth"
-     ) */
+     ) 
 )
-/* @SecurityScheme(
+ @SecurityScheme(
     name = "auth",
     in = SecuritySchemeIn.HEADER,
     type = SecuritySchemeType.HTTP,
     bearerFormat = "JWT",
     description = "Security desc"
-) */
+) 
 
 public class OpenApiConfig {
+
+   /*  @Override
+    public String toString() {
+        return "OpenApiConfig []";
+    } */
     
 }

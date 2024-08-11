@@ -1,76 +1,33 @@
-<<<<<<< HEAD
 # Projeto Back End
 
-> Este é um projeto que tem a finalidade de servir como  base para criação de APIs com Spring boot e o banco de dados PostegreSQL além é claro de um deploy.<br>
-Usarei as ferramentas Vscode, DBeaver na criação e gerenciamento do projeto.
+> Este projeto serve como base para a criação de APIs com Spring Boot, utilizando o banco de dados PostgreSQL e realizando deploy. Ferramentas como VSCode e DBeaver serão usadas na criação e gerenciamento do projeto.
 
-
-<hr><a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started"><img height ="35" src ="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"></a>
-<a href="https://dbeaver.io/"><img height ="35"  src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white"></a>
-<a href="https://www.postgresql.org/"><img height= "35" src= "https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"></a>
+<hr>
+<a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started">
+  <img height="35" src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white">
+</a>
+<a href="https://dbeaver.io/">
+  <img height="35" src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white">
+</a>
+<a href="https://www.postgresql.org/">
+  <img height="35" src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white">
+</a>
 
 ## 💻 Pré-requisitos
 
-Antes de começar, verifique se você atende os requisitos seguintes:
+Antes de começar, verifique se você atende aos seguintes requisitos:
 
-- Possuir JDK instalado na sua maquina
-- Possuir uma IDE da sua preferência, Vscode, Intellij, LTS ou qualquer outra de sua prefeência
-- O java do projeto esta na versão 17
+- Possuir JDK instalado na sua máquina.
+- Possuir uma IDE da sua preferência (VSCode, IntelliJ, LTS ou qualquer outra).
+- O projeto está configurado para usar o Java 17.
+- Ter o banco de dados PostgreSQL instalado na sua máquina.
 
-- ter instaldo na sua maquina o banco de dados Postgresql
-## 🚀 Instalando  do POSTEGRESQL
+## 🚀 Instalando o PostgreSQL
 
-A instalação será via terminal bach, pois estou usando linux ubuntu, caso esteja usando windows sugiro a instalação do termial ubuntu WSL ou procurar um tutorial na documentação. 
+A instalação será via terminal Bash no Linux Ubuntu. Se estiver usando Windows, sugiro instalar o terminal Ubuntu WSL ou seguir um tutorial na documentação oficial.
 
 - Abra o terminal.
+- Atualize o índice de pacotes do sistema:
 
-- Atualize o índice de pacotes do sistema: 
-```
+```bash
 sudo apt update
-```
-- Instale o PostgreSQL:
-```
-sudo apt install postgresql postgresql-contrib
-```
-- O PostgreSQL será instalado em seu sistema. O serviço será iniciado automaticamente após a instalação.
-
-## 🚀 Configurar o PostgreSQL
-- O PostgreSQL cria automaticamente um usuário chamado "postgres". Você pode mudar para esse usuário digitando:
-```
-sudo -i -u postgres
-```
-- Acesse o console do PostgreSQL digitando:
-```
-psql
-```
-- Agora você está no console do PostgreSQL e pode executar comandos SQL. Para sair do console, digite:
-```
-\q
-```
-
-## 🚀 Criar um Banco de Dados e um Usuário
-
-- Para criar um usuário faça o seguinte:<br><br>
-execute o seguinte comando <br>(substitua "seunomedeusuario" e "suasenha" pelos valores desejados):
-```
-CREATE USER seunomedeusuario WITH PASSWORD 'suasenha';
-```
-
-- Em seguida, crie um novo banco de dados. Substitua "nomedobanco" pelo nome que você deseja dar ao banco de dados:<br>
-```
-GRANT ALL PRIVILEGES ON DATABASE nomedobanco TO seunomedeusuario;
-```
-- Para sair do console do PostgreSQL, digite:
-```
-\q
-```
-
-=======
-# Desenvolvendo o DTO
-
->Desenvolvemos melhorias no Controller, no service e criamos uma pasta compartilhada com uma Entity para esconder atributos ou métodos, o que for necessário de acordo com a especificação da documentação.
-- Criado ProdutoResponse
-- Criado ProdutoRequest
-- Movido a pasta controller para a pasta chared
->>>>>>> fa34d08226af17c37b346246085d3eb2444a9083
-
